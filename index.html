@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Leaf Learning Center </title>
+    <meta name="description" content="The Leaf Learning Center provides professional tuition and after-school care for primary students in Bukit Mertajam, Penang. Experienced teachers, safe environment, personalized attention.">
+    <meta name="keywords" content="tuition center, learning center, after school care, Bukit Mertajam, Penang, primary school, homework guidance">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(115, 126, 123, 0.9) 0%, rgba(115, 126, 123, 0.9) 100%);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        }
+        
+        .nav-shadow {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .star-rating {
+            color: #fbbf24;
+        }
+        
+        .btn-primary {
+            background: #10b981;
+            color: rgb(249, 245, 245);
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #10b981;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid #10b981;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+        }
+        
+        .checkmark {
+            color: #10b981;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        
+        .section-bg {
+            background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+        }
+        
+        .kuse-branding {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #6b7280;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .kuse-branding:hover {
+            color: #10b981;
+        }
+        
+        .kuse-branding svg {
+            height: 1.2em;
+        }
+        
+        .chinese-text {
+            display: block;
+            font-size: 0.85em;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+        
+        .chinese-subtitle {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <nav class="fixed top-0 left-0 right-0 bg-white nav-shadow z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                       
+                        <img src="https://scontent.fkul7-1.fna.fbcdn.net/v/t39.30808-6/302103408_604843040995765_3835853168381892149_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=rt5pqIFIcFMQ7kNvwF40JIv&_nc_oc=Adkv2uscciCXV-19HPFySRGjufSmkyv8YutipDFj11OHxPUaZlPoEWm2Yax9WM-5t3iARDOjPDlxIiQswoAlCZMC&_nc_zt=23&_nc_ht=scontent.fkul7-1.fna&_nc_gid=-bDfIXnOiV-mnVkmpwKoXQ&_nc_ss=8&oh=00_Afx-BWszBmWd_6ysjdjl1e5g8n8kYrF9U4bOQBLaVw1TDQ&oe=69BBEA9E"
+                             class="w-12 h-12 rounded-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">The Leaf Learning Center</h1>
+                        <p class="text-xs text-gray-600">Bukit Mertajam, Penang</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex gap-8">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 font-medium transition">Home <span class="chinese-subtitle">首页</span></a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600 font-medium transition">About <span class="chinese-subtitle">关于我们</span></a>
+                    <a href="#programs" class="text-gray-700 hover:text-green-600 font-medium transition">Programs <span class="chinese-subtitle">课程</span></a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 font-medium transition">Contact <span class="chinese-subtitle">联系我们</span></a>
+                </div>
+                <a href="tel:+60103880515" class="hidden md:block btn-primary text-sm py-3 px-6">
+                    <i class="fas fa-phone mr-2"></i>Call Now <span class="chinese-subtitle">立即致电</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent.fkul21-1.fna.fbcdn.net/v/t39.30808-6/475687435_1268400964639966_2808421524016055916_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=2a1932&_nc_ohc=U1tJDq-6fGoQ7kNvwFQCo_a&_nc_oc=AdntHNNuy1Yb056u2CvkeYdhRbQJ6ocR_1xHgZgWnzzAohYzST7k5OW4LuT1rWm1MGwzVJ-LzfLlkEx-d77tNkNb&_nc_zt=23&_nc_ht=scontent.fkul21-1.fna&_nc_gid=9E_qYVPi2WaYovbnyyZiow&_nc_ss=8&oh=00_AfwddHKK391CgLflz8PziHtmFmuSG6UoSjYXs_YRo-XFAg&oe=69BBC9E2" alt="The Leaf Learning Center" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 fade-in">
+                With faith and love , we guide education through love.
+                <span class="chinese-text text-3xl sm:text-4xl lg:text-5xl">以信；以望 ；以爱 传启教育</span>
+            </h1>
+            <p class="text-xl sm:text-2xl mb-10 max-w-3xl mx-auto fade-in" style="animation-delay: 0.2s;">
+                Professional tuition and after-school care for primary students in Bukit Mertajam.
+                <span class="chinese-text text-lg sm:text-xl">为小学生提供专业补习和功课检查服务</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in" style="animation-delay: 0.4s;">
+                <a href="#contact" class="btn-primary text-lg">
+                    <i class="fas fa-user-plus mr-2"></i>Enroll Now <span class="chinese-subtitle">立即报名</span>
+                </a>
+                <a href="#contact" class="btn-secondary text-lg">
+                    <i class="fas fa-envelope mr-2"></i>Contact Us <span class="chinese-subtitle">联系我们</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Us<span class="chinese-text text-3xl">关于我们</span></h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        The Leaf Learning Center provides a safe, supportive and structured environment where children can grow academically and personally. We focus on homework guidance, tuition support and character development.
+                        <span class="chinese-text text-base">我们提供一个安全、支持性和结构化的环境，让孩子们在学业和个人方面成长。我们专注于作业指导、补习支持和品格发展。</span>
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle checkmark"></i>
+                            <span class="text-lg text-gray-800 font-medium">Small class sizes <span class="chinese-subtitle">小班教学</span></span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle checkmark"></i>
+                            <span class="text-lg text-gray-800 font-medium">Experienced teachers <span class="chinese-subtitle">经验丰富的教师</span></span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle checkmark"></i>
+                            <span class="text-lg text-gray-800 font-medium">Safe learning environment <span class="chinese-subtitle">安全的学习环境</span></span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle checkmark"></i>
+                            <span class="text-lg text-gray-800 font-medium">Personalized attention <span class="chinese-subtitle">个性化关注</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-green-100 to-yellow-100 rounded-3xl p-8 shadow-xl">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">📚</div>
+                            <h3 class="text-2xl font-bold text-gray-900">Our Mission<span class="chinese-text text-xl">我们的使命</span></h3>
+                        </div>
+                        <p class="text-gray-700 text-center leading-relaxed">
+                            To provide quality education and care that empowers every child to reach their full potential in a nurturing and inspiring environment.
+                            <span class="chinese-text">提供优质的教育和关怀，让每个孩子在充满关爱和启发的环境中发挥最大潜能。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="py-20 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Programs<span class="chinese-text text-3xl">我们的课程</span></h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+                <p class="text-lg text-gray-700 mt-6 max-w-2xl mx-auto">
+                    Comprehensive learning programs designed to help your child succeed
+                    <span class="chinese-text">全面的学习课程，帮助您的孩子成功</span>
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in">
+                    <div class="text-5xl mb-4 text-center">✏️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Homework Guidance<span class="chinese-text text-lg">作业指导</span></h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Helping students complete school homework with proper guidance
+                        <span class="chinese-text text-sm">帮助学生在适当的指导下完成学校作业</span>
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in" style="animation-delay: 0.1s;">
+                    <div class="text-5xl mb-4 text-center">📖</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Tuition Classes<span class="chinese-text text-lg">补习班</span></h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Focused lessons to improve academic performance
+                        <span class="chinese-text text-sm">专注课程以提高学业成绩</span>
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-5xl mb-4 text-center">🏫</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">After School Care<span class="chinese-text text-lg">安亲班</span></h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        A safe place for students after school with supervision
+                        <span class="chinese-text text-sm">为学生提供安全的安亲班和补习班</span>
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in" style="animation-delay: 0.3s;">
+                    <div class="text-5xl mb-4 text-center">🎯</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Exam Preparation<span class="chinese-text text-lg">考试准备</span></h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Helping students prepare for school exams with confidence
+                        <span class="chinese-text text-sm">帮助学生自信地准备学校考试</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Us<span class="chinese-text text-3xl">为什么选择我们</span></h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chalkboard-teacher text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Experienced Educators<span class="chinese-text text-lg">经验丰富的教育工作者</span></h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our teachers are qualified and passionate about helping children learn
+                        <span class="chinese-text text-sm">我们的教师具有资格并热衷于帮助孩子学习</span>
+                    </p>
+                </div>
+                <div class="text-center fade-in" style="animation-delay: 0.1s;">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Caring Environment<span class="chinese-text text-lg">关爱的环境</span></h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We create a warm and supportive atmosphere for every child
+                        <span class="chinese-text text-sm">我们为每个孩子创造温暖和支持的氛围</span>
+                    </p>
+                </div>
+                <div class="text-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book-open text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Structured Learning System<span class="chinese-text text-lg">结构化学习系统</span></h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Proven methods that help students achieve better results
+                        <span class="chinese-text text-sm">经过验证的方法帮助学生取得更好的成绩</span>
+                    </p>
+                </div>
+                <div class="text-center fade-in" style="animation-delay: 0.3s;">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Convenient Alma Location<span class="chinese-text text-lg">便利的阿尔玛地点</span></h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Easy to access in the heart of Bukit Mertajam
+                        <span class="chinese-text text-sm">位于大山脚中心，交通便利</span>
+                    </p>
+                </div>
+                <div class="text-center fade-in" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trusted by Local Parents<span class="chinese-text text-lg">受本地家长信赖</span></h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Join our community of satisfied parents and students
+                        <span class="chinese-text text-sm">加入我们满意的家长和学生社区</span>
+                    </p>
+                </div>
+                <div class="text-center fade-in" style="animation-delay: 0.5s;">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Safe & Secure<span class="chinese-text text-lg">安全可靠</span></h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Your child's safety is our top priority
+                        <span class="chinese-text text-sm">您孩子的安全是我们的首要任务</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <section id="contact" class="py-20 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us<span class="chinese-text text-3xl">联系我们</span></h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch<span class="chinese-text text-xl">联系方式</span></h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-1">Phone <span class="chinese-subtitle">电话</span></p>
+                                    <a href="tel:+60103880515" class="text-green-600 hover:text-green-700 text-lg">+6010-3880515</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-1">WhatsApp <span class="chinese-subtitle"></span></p>
+                                    <a href="https://wa.me/60103880515" target="_blank" class="text-green-600 hover:text-green-700 text-lg">Chat with us</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-1">Address <span class="chinese-subtitle">地址</span></p>
+                                    <p class="text-gray-700 leading-relaxed">6, Lorong Perniagaan 1,<br>Pusat Perniagaan Alma,<br>14000 Bukit Mertajam,<br>Pulau Pinang</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/60103880515" target="_blank" class="btn-primary w-full text-center mt-8 block">
+                            <i class="fab fa-whatsapp mr-2"></i>Message Us on WhatsApp <span class="chinese-subtitle">通过WhatsApp联系我们</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg h-full">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.8935!2d100.4682!3d5.3642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac3f1e1e1e1e1%3A0x1e1e1e1e1e1e1e1e!2sPusat%20Perniagaan%20Alma!5e0!3m2!1sen!2smy!4v1234567890" width="100%" height="100%" style="border:0; min-height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div class="w-12 h-12 rounded-full overflow-hidden">
+                                <img src="https://scontent.fkul7-1.fna.fbcdn.net/v/t39.30808-6/302103408_604843040995765_3835853168381892149_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=rt5pqIFIcFMQ7kNvwF40JIv&_nc_oc=Adkv2uscciCXV-19HPFySRGjufSmkyv8YutipDFj11OHxPUaZlPoEWm2Yax9WM-5t3iARDOjPDlxIiQswoAlCZMC&_nc_zt=23&_nc_ht=scontent.fkul7-1.fna&_nc_gid=-bDfIXnOiV-mnVkmpwKoXQ&_nc_ss=8&oh=00_Afx-BWszBmWd_6ysjdjl1e5g8n8kYrF9U4bOQBLaVw1TDQ&oe=69BBEA9E" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold">The Leaf Learning Center</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Nurturing young minds for a brighter future in Bukit Mertajam.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links<span class="chinese-text text-base">快速链接</span></h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-green-400 transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-green-400 transition">About</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-green-400 transition">Programs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-green-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info<span class="chinese-text text-base">联系信息</span></h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2 text-green-500"></i>+6010-3880515</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-green-500"></i>Bukit Mertajam, Penang</li>
+                    </ul>
+                </div>
+
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-center text-gray-400">
+                    © 2025 The Leaf Learning Center. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/60103880515" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: `0px 0px -100px 0px`
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(`visible`);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll(`.fade-in`).forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll(`a[href^="#"]`).forEach(anchor => {
+            anchor.addEventListener(`click`, function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute(`href`));
+                if (target) {
+                    const navHeight = 80;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: `smooth`
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
